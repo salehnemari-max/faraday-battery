@@ -85,6 +85,14 @@ jobs:
             Shot $p
             $y += 44
           }
+          # Live language switch: open the language box, pick English.
+          [W]::SetCursorPos(418, 548); Start-Sleep -Milliseconds 300
+          [W]::mouse_event(2,0,0,0,0); [W]::mouse_event(4,0,0,0,0)
+          Start-Sleep -Seconds 1
+          Shot "zz-language-popup"
+          [System.Windows.Forms.SendKeys]::SendWait("{UP}{ENTER}")
+          Start-Sleep -Seconds 3
+          Shot "zz-switched-to-english"
           Compress-Archive -Path shot-*.png -DestinationPath screenshots-ar.zip
           Copy-Item shot-dashboard.png screenshot-ar.png
           $proc | Stop-Process -Force
