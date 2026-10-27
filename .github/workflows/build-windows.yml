@@ -2,7 +2,7 @@ name: Build Windows (Arabic)
 
 on:
   push:
-    branches: [build-windows]
+    branches: [build-windows, baseline-check]
   workflow_dispatch:
 
 permissions:
@@ -44,22 +44,50 @@ jobs:
         shell: pwsh
         run: ./package.ps1 -Zip
 
-      - name: Screenshot Arabic UI
+      - name: Screenshot Arabic UI (every page)
+        if: github.ref_name == 'build-windows'
         shell: pwsh
         continue-on-error: true
         run: |
           $data = Join-Path $env:APPDATA "Faraday Project\Faraday"
           New-Item -ItemType Directory -Force $data | Out-Null
           '{ "language": "ar" }' | Set-Content (Join-Path $data "settings.json") -Encoding UTF8
-          $p = Start-Process "dist\Faraday\Faraday.exe" -PassThru
-          Start-Sleep -Seconds 15
           Add-Type -AssemblyName System.Windows.Forms, System.Drawing
-          $b = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
-          $bmp = New-Object System.Drawing.Bitmap $b.Width, $b.Height
-          $g = [System.Drawing.Graphics]::FromImage($bmp)
-          $g.CopyFromScreen($b.Location, [System.Drawing.Point]::Empty, $b.Size)
-          $bmp.Save("screenshot-ar.png")
-          Get-Process faraday-core -ErrorAction SilentlyContinue | Stop-Process -Force
+          Add-Type @"
+          using System; using System.Runtime.InteropServices;
+          public static class W {
+            [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
+            [DllImport("user32.dll")] public static extern bool MoveWindow(IntPtr h,int x,int y,int w,int ht,bool r);
+            [DllImport("user32.dll")] public static extern bool SetCursorPos(int x,int y);
+            [DllImport("user32.dll")] public static extern void mouse_event(int f,int x,int y,int d,int e);
+          }
+          "@
+          Start-Process "dist\Faraday\Faraday.exe"
+          Start-Sleep -Seconds 15
+          $proc = Get-Process faraday-core
+          [W]::MoveWindow($proc.MainWindowHandle, 0, 0, 1024, 720, $true) | Out-Null
+          [W]::SetForegroundWindow($proc.MainWindowHandle) | Out-Null
+          Start-Sleep -Seconds 2
+          function Shot($name) {
+            $b = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+            $bmp = New-Object System.Drawing.Bitmap $b.Width, $b.Height
+            $g = [System.Drawing.Graphics]::FromImage($bmp)
+            $g.CopyFromScreen($b.Location, [System.Drawing.Point]::Empty, $b.Size)
+            $bmp.Save("shot-$name.png")
+          }
+          # Sidebar items sit on the right in RTL; click each page in turn.
+          $pages = @("dashboard","monitor","history","alerts","calibration","settings")
+          $y = 123
+          foreach ($p in $pages) {
+            [W]::SetCursorPos(950, $y); Start-Sleep -Milliseconds 300
+            [W]::mouse_event(2,0,0,0,0); [W]::mouse_event(4,0,0,0,0)
+            Start-Sleep -Seconds 2
+            Shot $p
+            $y += 44
+          }
+          Compress-Archive -Path shot-*.png -DestinationPath screenshots-ar.zip
+          Copy-Item shot-dashboard.png screenshot-ar.png
+          $proc | Stop-Process -Force
 
       - uses: actions/upload-artifact@v4
         with:
@@ -67,9 +95,11 @@ jobs:
           path: |
             dist/*.zip
             screenshot-ar.png
+            screenshots-ar.zip
             ctest.log
 
       - name: Publish pre-release in this fork
+        if: github.ref_name == 'build-windows'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.6-ar.${{ github.run_number }}
@@ -79,4 +109,5 @@ jobs:
           files: |
             dist/*.zip
             screenshot-ar.png
+            screenshots-ar.zip
             ctest.log
