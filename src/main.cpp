@@ -39,13 +39,19 @@ int main(int argc, char *argv[])
         QCoreApplication::removeTranslator(&translator);
         const bool translated = language != QLatin1String("en")
             && translator.load(QStringLiteral(":/i18n/faraday_%1").arg(language));
+        // Arabic uses the ar_AE locale: Arabic month names with Western
+        // digits, so spin boxes and dates match the numbers the rest of the
+        // UI prints (plain "ar" would mix in Arabic-Indic digits).
+        const QLocale uiLocale = language == QLatin1String("ar")
+            ? QLocale(QLocale::Arabic, QLocale::UnitedArabEmirates)
+            : QLocale(language);
         if (translated) {
             QCoreApplication::installTranslator(&translator);
-            QLocale::setDefault(QLocale(language));
+            QLocale::setDefault(uiLocale);
         } else {
             QLocale::setDefault(systemLocale);
         }
-        app.setLayoutDirection(translated && QLocale(language).textDirection() == Qt::RightToLeft
+        app.setLayoutDirection(translated && uiLocale.textDirection() == Qt::RightToLeft
                                    ? Qt::RightToLeft
                                    : Qt::LeftToRight);
     };
