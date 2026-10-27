@@ -111,7 +111,7 @@ The **capacity-decline curve** (full-charge capacity against the design capacity
 - **Alerts** — latched thresholds (low battery, high temperature, low voltage) with hysteresis, unplug-at-full and charge-below reminders, tray notifications, minimize-to-tray, opt-in autostart via a Startup-folder shortcut (never a registry Run key).
 - **Calibration** — fuel-gauge drift detection and a guided 4-step conditioning workflow (charge → rest → discharge → recharge).
 - **Reports** — CSV and JSON exports, plus a self-contained HTML health report with an inline SVG chart.
-- **Settings** — dark/light themes, °C/°F, mWh/Wh, sample interval, data-folder access, i18n scaffold.
+- **Settings** — dark/light themes, °C/°F, mWh/Wh, sample interval, data-folder access, English and Arabic interface (Arabic is fully right-to-left, switchable live).
 - **Advanced raw-sensor drawer** — every raw value Faraday read, with its source class, and an explicit list of what your hardware does *not* report.
 
 If your machine has no battery thermal sensor (most consumer laptops don't), the temperature is labeled a system-zone **estimate** and the temperature alert is disabled with the reason given — rather than firing against a number that isn't your battery's.

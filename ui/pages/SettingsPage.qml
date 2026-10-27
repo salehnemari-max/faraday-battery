@@ -135,10 +135,14 @@ Item {
                 heading: qsTr("LANGUAGE")
                 SettingRow {
                     label: qsTr("Language")
-                    hint: qsTr("Faraday is translation-ready (Qt Linguist). English ships first; add .qm files to the translations folder to extend.")
+                    hint: qsTr("Applies immediately. Arabic switches the whole interface to right-to-left.")
                     ComboBox {
-                        model: [qsTr("English")]
-                        currentIndex: 0
+                        // Language names stay in their own script so anyone
+                        // can find theirs, whatever the current UI language.
+                        readonly property var codes: ["en", "ar"]
+                        model: ["English", "العربية"]
+                        currentIndex: Math.max(0, codes.indexOf(battery.language))
+                        onActivated: (index) => battery.language = codes[index]
                     }
                     Item { Layout.fillWidth: true }
                 }

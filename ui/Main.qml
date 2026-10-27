@@ -39,6 +39,10 @@ ApplicationWindow {
     RowLayout {
         anchors.fill: parent
         spacing: 0
+        // Right-to-left UI languages (Arabic) mirror the whole layout:
+        // the sidebar moves to the right and rows read right-to-left.
+        LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
+        LayoutMirroring.childrenInherit: true
 
         // ------- Sidebar -------
         Rectangle {

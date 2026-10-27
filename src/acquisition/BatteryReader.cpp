@@ -1,5 +1,7 @@
 #include "BatteryReader.h"
 
+#include <QtGlobal>
+
 namespace faraday {
 
 namespace {
@@ -94,14 +96,14 @@ std::optional<quint32> BatteryReader::sanitizeCycleCount(quint32 cycles)
 QString BatteryReader::chemistryToString(int code)
 {
     switch (code) {
-    case 1: return QStringLiteral("Other");
-    case 2: return QStringLiteral("Unknown");
-    case 3: return QStringLiteral("Lead Acid");
-    case 4: return QStringLiteral("Nickel Cadmium");
-    case 5: return QStringLiteral("Nickel Metal Hydride");
-    case 6: return QStringLiteral("Lithium-ion");
-    case 7: return QStringLiteral("Zinc Air");
-    case 8: return QStringLiteral("Lithium Polymer");
+    case 1: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Other"));
+    case 2: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Unknown"));
+    case 3: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Lead Acid"));
+    case 4: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Nickel Cadmium"));
+    case 5: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Nickel Metal Hydride"));
+    case 6: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Lithium-ion"));
+    case 7: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Zinc Air"));
+    case 8: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Lithium Polymer"));
     default: return QString();
     }
 }
@@ -114,19 +116,19 @@ QString BatteryReader::normalizeChemistryToken(const QString &token)
     const QString upper = t.toUpper();
     if (upper == QLatin1String("LION") || upper == QLatin1String("LI-I")
         || upper == QLatin1String("LI I") || upper == QLatin1String("LIION"))
-        return QStringLiteral("Lithium-ion");
+        return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Lithium-ion"));
     if (upper == QLatin1String("LIP") || upper == QLatin1String("LIPO"))
-        return QStringLiteral("Lithium Polymer");
+        return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Lithium Polymer"));
     if (upper == QLatin1String("PBAC"))
-        return QStringLiteral("Lead Acid");
+        return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Lead Acid"));
     if (upper == QLatin1String("NICD"))
-        return QStringLiteral("Nickel Cadmium");
+        return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Nickel Cadmium"));
     if (upper == QLatin1String("NIMH"))
-        return QStringLiteral("Nickel Metal Hydride");
+        return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Nickel Metal Hydride"));
     if (upper == QLatin1String("NIZN"))
-        return QStringLiteral("Nickel Zinc");
+        return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Nickel Zinc"));
     if (upper == QLatin1String("RAM"))
-        return QStringLiteral("Rechargeable Alkaline");
+        return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Rechargeable Alkaline"));
     // Unknown but real hardware token: pass it through rather than guess.
     return t;
 }
@@ -176,17 +178,17 @@ QString BatteryReader::manufactureDateToIso(const QString &cimDateTime)
 QString BatteryReader::win32StatusToString(int code)
 {
     switch (code) {
-    case 1: return QStringLiteral("Discharging");
-    case 2: return QStringLiteral("On AC power");
-    case 3: return QStringLiteral("Fully charged");
-    case 4: return QStringLiteral("Low");
-    case 5: return QStringLiteral("Critical");
-    case 6: return QStringLiteral("Charging");
-    case 7: return QStringLiteral("Charging (high)");
-    case 8: return QStringLiteral("Charging (low)");
-    case 9: return QStringLiteral("Charging (critical)");
-    case 10: return QStringLiteral("Undefined");
-    case 11: return QStringLiteral("Partially charged");
+    case 1: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Discharging"));
+    case 2: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "On AC power"));
+    case 3: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Fully charged"));
+    case 4: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Low"));
+    case 5: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Critical"));
+    case 6: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Charging"));
+    case 7: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Charging (high)"));
+    case 8: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Charging (low)"));
+    case 9: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Charging (critical)"));
+    case 10: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Undefined"));
+    case 11: return QStringLiteral(QT_TRANSLATE_NOOP("BatteryReader", "Partially charged"));
     default: return QString();
     }
 }

@@ -1,5 +1,6 @@
 #include "TrayManager.h"
 
+#include <QAction>
 #include <QApplication>
 #include <QMenu>
 #include <QPainter>
@@ -64,16 +65,16 @@ TrayManager::TrayManager(QObject *parent)
     m_tray = new QSystemTrayIcon(makeTrayIcon(), this);
     m_menu = new QMenu();
 
-    QAction *openAction = m_menu->addAction(tr("Open Faraday"));
-    connect(openAction, &QAction::triggered, this, &TrayManager::openRequested);
-    QAction *sampleAction = m_menu->addAction(tr("Sample now"));
-    connect(sampleAction, &QAction::triggered, this, &TrayManager::sampleNowRequested);
+    m_openAction = m_menu->addAction(QString());
+    connect(m_openAction, &QAction::triggered, this, &TrayManager::openRequested);
+    m_sampleAction = m_menu->addAction(QString());
+    connect(m_sampleAction, &QAction::triggered, this, &TrayManager::sampleNowRequested);
     m_menu->addSeparator();
-    QAction *quitAction = m_menu->addAction(tr("Quit"));
-    connect(quitAction, &QAction::triggered, this, &TrayManager::quitRequested);
+    m_quitAction = m_menu->addAction(QString());
+    connect(m_quitAction, &QAction::triggered, this, &TrayManager::quitRequested);
 
     m_tray->setContextMenu(m_menu);
-    m_tray->setToolTip(tr("Faraday — Battery Intelligence Suite"));
+    retranslate();
     connect(m_tray, &QSystemTrayIcon::activated, this,
             [this](QSystemTrayIcon::ActivationReason reason) {
                 if (reason == QSystemTrayIcon::Trigger
@@ -83,6 +84,16 @@ TrayManager::TrayManager(QObject *parent)
             });
     m_tray->show();
     m_available = true;
+}
+
+void TrayManager::retranslate()
+{
+    if (!m_tray)
+        return;
+    m_openAction->setText(tr("Open Faraday"));
+    m_sampleAction->setText(tr("Sample now"));
+    m_quitAction->setText(tr("Quit"));
+    m_tray->setToolTip(tr("Faraday — Battery Intelligence Suite"));
 }
 
 TrayManager::~TrayManager()

@@ -100,6 +100,119 @@
     </message>
 </context>
 <context>
+    <name>BatteryReader</name>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="99"/>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="100"/>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="101"/>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="123"/>
+        <source>Lead Acid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="102"/>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="125"/>
+        <source>Nickel Cadmium</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="103"/>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="127"/>
+        <source>Nickel Metal Hydride</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="104"/>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="119"/>
+        <source>Lithium-ion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="105"/>
+        <source>Zinc Air</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="106"/>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="121"/>
+        <source>Lithium Polymer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="129"/>
+        <source>Nickel Zinc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="131"/>
+        <source>Rechargeable Alkaline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="181"/>
+        <source>Discharging</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="182"/>
+        <source>On AC power</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="183"/>
+        <source>Fully charged</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="184"/>
+        <source>Low</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="185"/>
+        <source>Critical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="186"/>
+        <source>Charging</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="187"/>
+        <source>Charging (high)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="188"/>
+        <source>Charging (low)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="189"/>
+        <source>Charging (critical)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="190"/>
+        <source>Undefined</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/acquisition/BatteryReader.cpp" line="191"/>
+        <source>Partially charged</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CalibrationPage</name>
     <message>
         <location filename="../ui/pages/CalibrationPage.qml" line="15"/>
@@ -172,27 +285,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/CalibrationPage.qml" line="194"/>
-        <source>EXPORTS — written to DocumentsFaraday exports</source>
+        <location filename="../ui/pages/CalibrationPage.qml" line="196"/>
+        <source>EXPORTS — written to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/CalibrationPage.qml" line="202"/>
+        <location filename="../ui/pages/CalibrationPage.qml" line="204"/>
         <source>Samples → CSV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/CalibrationPage.qml" line="206"/>
+        <location filename="../ui/pages/CalibrationPage.qml" line="208"/>
         <source>Samples → JSON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/CalibrationPage.qml" line="210"/>
+        <location filename="../ui/pages/CalibrationPage.qml" line="212"/>
         <source>HTML health report</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/CalibrationPage.qml" line="215"/>
+        <location filename="../ui/pages/CalibrationPage.qml" line="217"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
@@ -415,17 +528,17 @@ Live monitoring is disabled.</source>
 <context>
     <name>HealthVerdict</name>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="183"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="187"/>
         <source>Over the recorded period the machine was plugged in %1% of the time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="190"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="194"/>
         <source>The battery sits at or near full charge for long stretches while plugged in; if your firmware offers a charge cap (e.g. 80%), enabling it would slow wear.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="197"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="201"/>
         <source>Deep discharges below 15% happen regularly; lithium batteries last longer when recharged before dropping that low.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -433,112 +546,112 @@ Live monitoring is disabled.</source>
 <context>
     <name>HistoryPage</name>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="50"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="56"/>
         <source>History &amp; timeline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="59"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="65"/>
         <source>Trend: %1 mWh/day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="61"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="67"/>
         <source>80% threshold ≈ %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="67"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="75"/>
         <source>Range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="73"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="81"/>
         <source>All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="74"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="82"/>
         <source>1 month</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="75"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="83"/>
         <source>3 months</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="76"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="84"/>
         <source>6 months</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="77"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="85"/>
         <source>1 year</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="114"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="143"/>
         <source>No capacity history available yet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="178"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="111"/>
         <source>CAPACITY DECLINE — full charge vs design</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="216"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="254"/>
         <source>No cycle history</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="242"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="224"/>
         <source>CYCLE COUNT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="264"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="295"/>
         <source>RECENT USAGE — stitched from powercfg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="273"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="306"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="274"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="307"/>
         <source>State</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="275"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="308"/>
         <source>Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="276"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="309"/>
         <source>Duration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="277"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="310"/>
         <source>Energy Δ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="278"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="311"/>
         <source>Level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="309"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="344"/>
         <source>AC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/HistoryPage.qml" line="309"/>
+        <location filename="../ui/pages/HistoryPage.qml" line="344"/>
         <source>Battery</source>
         <translation type="unfinished"></translation>
     </message>
@@ -546,52 +659,52 @@ Live monitoring is disabled.</source>
 <context>
     <name>Main</name>
     <message>
-        <location filename="../ui/Main.qml" line="13"/>
+        <location filename="../ui/Main.qml" line="14"/>
         <source>Faraday — Battery Intelligence Suite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/Main.qml" line="71"/>
+        <location filename="../ui/Main.qml" line="82"/>
         <source>Faraday</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/Main.qml" line="81"/>
+        <location filename="../ui/Main.qml" line="92"/>
         <source>Dashboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/Main.qml" line="82"/>
+        <location filename="../ui/Main.qml" line="93"/>
         <source>Live monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/Main.qml" line="83"/>
+        <location filename="../ui/Main.qml" line="94"/>
         <source>History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/Main.qml" line="84"/>
+        <location filename="../ui/Main.qml" line="95"/>
         <source>Alerts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/Main.qml" line="85"/>
+        <location filename="../ui/Main.qml" line="96"/>
         <source>Calibration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/Main.qml" line="86"/>
+        <location filename="../ui/Main.qml" line="97"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/Main.qml" line="139"/>
+        <location filename="../ui/Main.qml" line="150"/>
         <source>Dark theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/Main.qml" line="139"/>
+        <location filename="../ui/Main.qml" line="150"/>
         <source>Light theme</source>
         <translation type="unfinished"></translation>
     </message>
@@ -599,107 +712,107 @@ Live monitoring is disabled.</source>
 <context>
     <name>MonitorPage</name>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="41"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="45"/>
         <source>No battery detected — live monitoring is disabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="59"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="63"/>
         <source>Live monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="66"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="70"/>
         <source>Interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="79"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="83"/>
         <source>Zoom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="86"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="90"/>
         <source>All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="87"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="91"/>
         <source>5 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="88"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="92"/>
         <source>15 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="89"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="93"/>
         <source>1 hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="90"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="94"/>
         <source>4 hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="96"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="100"/>
         <source>Sample now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="100"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="104"/>
         <source>Reset origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="112"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="116"/>
         <source>STATE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="113"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="117"/>
         <source>POWER</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="115"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="119"/>
         <source>TREND</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="120"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="124"/>
         <source>EXPECTED DRAIN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="123"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="127"/>
         <source>ESTIMATE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="294"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="340"/>
         <source>Collecting samples…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="305"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="175"/>
         <source>Charge level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="306"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="176"/>
         <source>Trend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="307"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="177"/>
         <source>Expected discharge</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/MonitorPage.qml" line="308"/>
+        <location filename="../ui/pages/MonitorPage.qml" line="178"/>
         <source>Critical draw</source>
         <translation type="unfinished"></translation>
     </message>
@@ -788,31 +901,26 @@ Live monitoring is disabled.</source>
     </message>
     <message>
         <location filename="../ui/pages/SettingsPage.qml" line="138"/>
-        <source>Faraday is translation-ready (Qt Linguist). English ships first; add .qm files to the translations folder to extend.</source>
+        <source>Applies immediately. Arabic switches the whole interface to right-to-left.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/SettingsPage.qml" line="140"/>
-        <source>English</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/pages/SettingsPage.qml" line="148"/>
+        <location filename="../ui/pages/SettingsPage.qml" line="152"/>
         <source>DATA</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/SettingsPage.qml" line="150"/>
+        <location filename="../ui/pages/SettingsPage.qml" line="154"/>
         <source>Data folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/SettingsPage.qml" line="151"/>
+        <location filename="../ui/pages/SettingsPage.qml" line="155"/>
         <source>Settings (JSON) and the sample database live here. Faraday never writes to the registry.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/pages/SettingsPage.qml" line="160"/>
+        <location filename="../ui/pages/SettingsPage.qml" line="164"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
@@ -873,133 +981,133 @@ Live monitoring is disabled.</source>
 <context>
     <name>faraday::BatteryModel</name>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="241"/>
+        <location filename="../src/app/BatteryModel.cpp" line="242"/>
         <source>Reading sensors…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="243"/>
+        <location filename="../src/app/BatteryModel.cpp" line="244"/>
         <source>No battery detected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="246"/>
+        <location filename="../src/app/BatteryModel.cpp" line="247"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="248"/>
+        <location filename="../src/app/BatteryModel.cpp" line="249"/>
         <source>Charging</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="250"/>
+        <location filename="../src/app/BatteryModel.cpp" line="251"/>
         <source>Discharging</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="253"/>
+        <location filename="../src/app/BatteryModel.cpp" line="254"/>
         <source>Fully charged</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="254"/>
+        <location filename="../src/app/BatteryModel.cpp" line="255"/>
         <source>On AC power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="261"/>
+        <location filename="../src/app/BatteryModel.cpp" line="262"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="346"/>
+        <location filename="../src/app/BatteryModel.cpp" line="347"/>
         <source>No usable thermal zone on this machine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="348"/>
+        <location filename="../src/app/BatteryModel.cpp" line="349"/>
         <source>System-zone estimate — this machine exposes no battery thermal sensor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="351"/>
+        <location filename="../src/app/BatteryModel.cpp" line="352"/>
         <source>Battery thermal sensor (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="353"/>
+        <location filename="../src/app/BatteryModel.cpp" line="354"/>
         <source>Battery thermal sensor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="459"/>
+        <location filename="../src/app/BatteryModel.cpp" line="460"/>
         <source>%1 h %2 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="460"/>
+        <location filename="../src/app/BatteryModel.cpp" line="461"/>
         <source>%1 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="474"/>
+        <location filename="../src/app/BatteryModel.cpp" line="475"/>
         <source>%1 to full charge</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="491"/>
+        <location filename="../src/app/BatteryModel.cpp" line="492"/>
         <source>%1 remaining (trend)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="496"/>
-        <location filename="../src/app/BatteryModel.cpp" line="498"/>
+        <location filename="../src/app/BatteryModel.cpp" line="497"/>
+        <location filename="../src/app/BatteryModel.cpp" line="499"/>
         <source>%1 remaining</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="704"/>
+        <location filename="../src/app/BatteryModel.cpp" line="709"/>
         <source>Pack %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="713"/>
+        <location filename="../src/app/BatteryModel.cpp" line="718"/>
         <source>Device name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="714"/>
+        <location filename="../src/app/BatteryModel.cpp" line="719"/>
         <source>Manufacturer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="715"/>
+        <location filename="../src/app/BatteryModel.cpp" line="720"/>
         <source>Serial number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="716"/>
+        <location filename="../src/app/BatteryModel.cpp" line="721"/>
         <source>Manufacture date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="717"/>
+        <location filename="../src/app/BatteryModel.cpp" line="722"/>
         <source>Chemistry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="721"/>
+        <location filename="../src/app/BatteryModel.cpp" line="726"/>
         <source>Design capacity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="1031"/>
+        <location filename="../src/app/BatteryModel.cpp" line="1054"/>
         <source>Autostart change failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/BatteryModel.cpp" line="1059"/>
+        <location filename="../src/app/BatteryModel.cpp" line="1082"/>
         <source>Charge cap updated.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1070,107 +1178,107 @@ Live monitoring is disabled.</source>
 <context>
     <name>faraday::HealthVerdict</name>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="35"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="39"/>
         <source>Excellent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="36"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="40"/>
         <source>Good</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="37"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="41"/>
         <source>Fair</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="38"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="42"/>
         <source>Worn</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="39"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="43"/>
         <source>Replace soon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="42"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="46"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="52"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="56"/>
         <source>Your battery is in excellent shape — it still holds nearly all of its original capacity.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="56"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="60"/>
         <source>Your battery is in good shape with only normal wear for its age.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="60"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="64"/>
         <source>Your battery shows noticeable wear; runtime is meaningfully shorter than when it was new.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="64"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="68"/>
         <source>Your battery is significantly worn; expect much shorter runtime and plan for a replacement.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="68"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="72"/>
         <source>Your battery has lost more than half of its original capacity and should be replaced.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="72"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="76"/>
         <source>Not enough data to judge battery health yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="77"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="81"/>
         <source>Current full-charge capacity is %1% of the design capacity.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="93"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="97"/>
         <source>Only %1 charge cycles are recorded, yet capacity has already dropped noticeably — consistent with calendar aging or sustained heat rather than heavy use.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="99"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="103"/>
         <source>With %1 charge cycles, the battery is still early in its life (most packs are rated for 500–1000 cycles).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="104"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="108"/>
         <source>%1 charge cycles is moderate use; most packs are rated for 500–1000 cycles.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="108"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="112"/>
         <source>%1 charge cycles is high; capacity loss will accelerate from here.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="115"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="119"/>
         <source>The system is running warm (%1°C); sustained heat is the biggest single cause of battery ageing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="122"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="126"/>
         <source>The charge gauge disagrees with the measured energy by %1%; a calibration cycle would make estimates more accurate.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="130"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="134"/>
         <source>Capacity is declining by roughly %1 mWh per month.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/HealthVerdict.cpp" line="136"/>
+        <location filename="../src/core/HealthVerdict.cpp" line="140"/>
         <source>At the current rate of wear the battery will reach its service threshold around %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1178,33 +1286,41 @@ Live monitoring is disabled.</source>
 <context>
     <name>faraday::TrayManager</name>
     <message>
-        <location filename="../src/app/TrayManager.cpp" line="65"/>
+        <location filename="../src/app/TrayManager.cpp" line="93"/>
         <source>Open Faraday</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/TrayManager.cpp" line="67"/>
+        <location filename="../src/app/TrayManager.cpp" line="94"/>
         <source>Sample now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/TrayManager.cpp" line="70"/>
+        <location filename="../src/app/TrayManager.cpp" line="95"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/TrayManager.cpp" line="74"/>
+        <location filename="../src/app/TrayManager.cpp" line="96"/>
         <source>Faraday — Battery Intelligence Suite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/TrayManager.cpp" line="96"/>
+        <location filename="../src/app/TrayManager.cpp" line="109"/>
         <source>Faraday keeps running</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/app/TrayManager.cpp" line="97"/>
+        <location filename="../src/app/TrayManager.cpp" line="110"/>
         <source>Monitoring continues in the tray. Right-click the icon to quit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="../src/main.cpp" line="63"/>
+        <source>Faraday — %1% · %2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

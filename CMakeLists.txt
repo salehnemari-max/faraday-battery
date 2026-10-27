@@ -113,8 +113,9 @@ target_link_libraries(faradayui PRIVATE Qt6::Quick)
 
 # i18n: English ships as the source language; additional languages only
 # need new .ts files here. The .qm files are embedded under :/i18n/.
+# Arabic (ar) is right-to-left: main.cpp mirrors the layout for it.
 qt_add_translations(faraday
-    TS_FILES i18n/faraday_en.ts
+    TS_FILES i18n/faraday_en.ts i18n/faraday_ar.ts
     RESOURCE_PREFIX "/i18n"
     LUPDATE_OPTIONS -no-obsolete
 )

@@ -191,7 +191,9 @@ Item {
                     spacing: 10
 
                     Text {
-                        text: qsTr("EXPORTS — written to Documents\\Faraday exports")
+                        // The path stays outside qsTr: lupdate drops the escaped backslash,
+                        // which would make the extracted key differ from the runtime one.
+                        text: qsTr("EXPORTS — written to %1").arg("Documents\\Faraday exports")
                         color: Theme.textDim
                         font.pixelSize: 11
                         font.letterSpacing: 1.2

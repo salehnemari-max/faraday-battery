@@ -76,6 +76,9 @@ class BatteryModel : public QObject
 
     // Preferences
     Q_PROPERTY(QString theme READ theme WRITE setTheme NOTIFY settingsChanged)
+    // UI language code ("en", "ar", ...). Changing it emits languageChanged;
+    // main.cpp swaps the translator and retranslates the UI live.
+    Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
     Q_PROPERTY(int sampleIntervalSec READ sampleIntervalSec WRITE setSampleIntervalSec
                    NOTIFY settingsChanged)
     Q_PROPERTY(bool minimizeToTray READ minimizeToTray NOTIFY settingsChanged)
@@ -151,6 +154,8 @@ public:
 
     QString theme() const;
     void setTheme(const QString &theme);
+    QString language() const;
+    void setLanguage(const QString &language);
     int sampleIntervalSec() const;
     void setSampleIntervalSec(int seconds);
     bool minimizeToTray() const;
@@ -210,6 +215,7 @@ signals:
     void reportChanged();
     void liveSeriesChanged();
     void settingsChanged();
+    void languageChanged();
     void chargeCapChanged();
     void alertRaised(const QString &title, const QString &message);
     void acquisitionError(const QString &message);

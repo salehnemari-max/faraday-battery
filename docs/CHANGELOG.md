@@ -3,6 +3,25 @@
 All notable changes to Faraday are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com); versioning: SemVer.
 
+## [Unreleased]
+
+### Added
+- **Arabic interface translation** (`i18n/faraday_ar.ts`, all 253 strings)
+  with full right-to-left layout mirroring.
+- Working language selector in Settings; switching language applies live
+  (UI, tray menu, verdict text) without a restart.
+
+### Fixed
+- Health grades and verdict text could never be translated: the runtime
+  lookup used the `HealthVerdict` context while lupdate extracts those
+  strings under `faraday::HealthVerdict`.
+- The exports heading could never be translated: lupdate drops the escaped
+  backslash in `Documents\Faraday exports`, so the path now sits outside
+  the translatable string.
+- Battery chemistry names, Windows battery status fallbacks and the tray
+  tooltip were not marked for translation; month names in the end-of-life
+  estimate now follow the UI locale.
+
 ## [1.0.6] — measured AV results (2026-07-12, post-release)
 
 VirusTotal scans of all four 1.0.6 artifacts. **No binaries were changed in

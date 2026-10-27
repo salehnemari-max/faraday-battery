@@ -11,6 +11,7 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
+#include <QLocale>
 #include <QPointer>
 #include <QRegularExpression>
 #include <QStandardPaths>
@@ -256,7 +257,7 @@ QString BatteryModel::statusText() const
     if (dev->win32Status.has_value()) {
         const QString s = BatteryReader::win32StatusToString(*dev->win32Status);
         if (!s.isEmpty())
-            return s;
+            return QCoreApplication::translate("BatteryReader", s.toUtf8().constData());
     }
     return tr("Idle");
 }
@@ -657,6 +658,10 @@ QVariantMap BatteryModel::resolvedStaticFor(int index) const
         chemistry = dev->chemistry;
         chemistrySrc = source("chemistry");
     }
+    // Known chemistry names are marked for translation in BatteryReader;
+    // unknown hardware tokens pass through unchanged.
+    if (!chemistry.isEmpty())
+        chemistry = QCoreApplication::translate("BatteryReader", chemistry.toUtf8().constData());
     put("chemistry", chemistry, chemistrySrc);
 
     QString uniqueId, uniqueIdSrc;
@@ -830,6 +835,24 @@ void BatteryModel::setTheme(const QString &theme)
     m_settings.setValue(QStringLiteral("theme"), theme);
     m_settings.save();
     emit settingsChanged();
+}
+
+QString BatteryModel::language() const
+{
+    return m_settings.language();
+}
+
+void BatteryModel::setLanguage(const QString &language)
+{
+    if (language.isEmpty() || language == m_settings.language())
+        return;
+    m_settings.setValue(QStringLiteral("language"), language);
+    m_settings.save();
+    emit languageChanged();
+    // Strings built in C++ (verdict, status, insights) are re-read by QML.
+    emit snapshotChanged();
+    emit reportChanged();
+    emit staticInfoChanged();
 }
 
 int BatteryModel::sampleIntervalSec() const
@@ -1009,7 +1032,7 @@ QVariantMap BatteryModel::degradationInfo() const
                                                       static_cast<double>(design));
         if (eol.has_value())
             result.insert(QStringLiteral("eolDate"),
-                          eol->toString(QStringLiteral("MMMM yyyy")));
+                          QLocale().toString(*eol, QStringLiteral("MMMM yyyy")));
     }
     return result;
 }

@@ -89,15 +89,18 @@ embedded via `resources/faraday.rc`.
 
 ## Translations
 
-`i18n/faraday_en.ts` is the source catalog (≈210 strings). Refresh with:
+`i18n/faraday_en.ts` is the source catalog (≈250 strings); `faraday_ar.ts`
+is the complete Arabic translation. Refresh both with:
 
 ```powershell
-C:\Qt\6.8.2\mingw_64\bin\lupdate.exe src ui -ts i18n\faraday_en.ts
+C:\Qt\6.8.2\mingw_64\bin\lupdate.exe src ui -no-obsolete -locations absolute -ts i18n\faraday_en.ts i18n\faraday_ar.ts
 ```
 
 To add a language, copy the file to `faraday_<lang>.ts`, translate in
-Qt Linguist, add it to `qt_add_translations` in CMakeLists.txt; the `.qm`
-embeds automatically under `:/i18n/`.
+Qt Linguist, add it to `qt_add_translations` in CMakeLists.txt and to the
+language list in `ui/pages/SettingsPage.qml`; the `.qm` embeds
+automatically under `:/i18n/`. The language switch applies live, and a
+right-to-left language mirrors the whole layout automatically.
 
 ## Project layout
 

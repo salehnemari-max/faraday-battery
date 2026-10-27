@@ -1,14 +1,18 @@
 #include "HealthVerdict.h"
 
 #include <QCoreApplication>
+#include <QLocale>
 
 namespace faraday {
 
 namespace {
 
+// lupdate files the bare tr() calls made inside HealthVerdict:: members
+// under the namespace-qualified class context, so the lookup must use the
+// same context or the grade names and verdict text never get translated.
 QString tr(const char *text)
 {
-    return QCoreApplication::translate("HealthVerdict", text);
+    return QCoreApplication::translate("faraday::HealthVerdict", text);
 }
 
 } // namespace
@@ -135,7 +139,7 @@ Verdict HealthVerdict::generate(const VerdictInput &input)
     if (input.endOfLife.has_value()) {
         verdict.details << tr("At the current rate of wear the battery will reach its "
                               "service threshold around %1.")
-                               .arg(input.endOfLife->toString(QStringLiteral("MMMM yyyy")));
+                               .arg(QLocale().toString(*input.endOfLife, QStringLiteral("MMMM yyyy")));
     }
 
     return verdict;
