@@ -111,3 +111,12 @@ jobs:
             screenshot-ar.png
             screenshots-ar.zip
             ctest.log
+
+      - name: Publish baseline test log
+        if: github.ref_name == 'baseline-check'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: baseline-tests-${{ github.run_number }}
+          name: Baseline tests (unmodified upstream) ${{ github.run_number }}
+          prerelease: true
+          files: ctest.log
