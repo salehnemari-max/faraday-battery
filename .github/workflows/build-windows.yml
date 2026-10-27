@@ -1,0 +1,82 @@
+name: Build Windows (Arabic)
+
+on:
+  push:
+    branches: [build-windows]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Same toolchain and paths as build.ps1 / package.ps1 (C:\Qt\...).
+      - uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.8.2'
+          host: windows
+          target: desktop
+          arch: win64_mingw
+          dir: 'C:\'
+          tools: 'tools_mingw1310,qt.tools.win64_mingw1310'
+          cache: true
+
+      - name: Install Ninja
+        run: choco install ninja -y --no-progress
+
+      - name: Build
+        shell: pwsh
+        run: ./build.ps1 -Config Release
+
+      - name: Test
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $env:Path = "C:\Qt\Tools\mingw1310_64\bin;C:\Qt\6.8.2\mingw_64\bin;" + $env:Path
+          ctest --test-dir build --output-on-failure 2>&1 | Tee-Object -FilePath ctest.log
+          exit $LASTEXITCODE
+
+      - name: Package portable ZIP
+        shell: pwsh
+        run: ./package.ps1 -Zip
+
+      - name: Screenshot Arabic UI
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $data = Join-Path $env:APPDATA "Faraday Project\Faraday"
+          New-Item -ItemType Directory -Force $data | Out-Null
+          '{ "language": "ar" }' | Set-Content (Join-Path $data "settings.json") -Encoding UTF8
+          $p = Start-Process "dist\Faraday\Faraday.exe" -PassThru
+          Start-Sleep -Seconds 15
+          Add-Type -AssemblyName System.Windows.Forms, System.Drawing
+          $b = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+          $bmp = New-Object System.Drawing.Bitmap $b.Width, $b.Height
+          $g = [System.Drawing.Graphics]::FromImage($bmp)
+          $g.CopyFromScreen($b.Location, [System.Drawing.Point]::Empty, $b.Size)
+          $bmp.Save("screenshot-ar.png")
+          Get-Process faraday-core -ErrorAction SilentlyContinue | Stop-Process -Force
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: faraday-arabic
+          path: |
+            dist/*.zip
+            screenshot-ar.png
+            ctest.log
+
+      - name: Publish pre-release in this fork
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.6-ar.${{ github.run_number }}
+          name: Faraday 1.0.6 — Arabic build ${{ github.run_number }}
+          prerelease: true
+          body: Unofficial build of the arabic-translation branch (Arabic UI, right-to-left). Built by GitHub Actions from this fork.
+          files: |
+            dist/*.zip
+            screenshot-ar.png
+            ctest.log
